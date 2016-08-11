@@ -1,0 +1,55 @@
+[ {
+  "id" : "rodolfo.carrion",
+  "rol" : "ADMIN"
+}, {
+  "id" : "josue.santos",
+  "rol" : "ADMIN"
+}, {
+  "id" : "rafael.castillo",
+  "rol" : "ADMIN"
+}, {
+  "id" : "assistance",
+  "rol" : "ADMIN"
+}, {
+  "id" : "admin",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "supervision",
+  "rol" : "ADMIN"
+}, {
+  "id" : "ujufuhbry2smwgtafvnqyx3b",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "vasteaga",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "jorge.alonso",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "gloria.chicchon",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "gestion.cobros",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "gestion.pagos",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "gestion.facturas",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "rosa.m.carrera",
+  "rol" : "CONTABLE"
+}, {
+  "id" : "israel.cosme",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "stephanie.privat",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "javier.machado",
+  "rol" : "OPERADOR"
+}, {
+  "id" : "gabriela.rodriguez",
+  "rol" : "OPERADOR"
+} ]

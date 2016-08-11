@@ -1,0 +1,66 @@
+doctype html
+html(lang='en', ng-app='casos')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+		title Issues
+		// jquery
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		// bootstrap
+		link(href='/bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
+		script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+		// angular
+		script(src='/bower_components/angular/angular.min.js')
+		script(src='/bower_components/angular-resource/angular-resource.min.js')
+		script(src='/bower_components/angular-route/angular-route.min.js')
+		script(src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+		// bootstrap material design
+		link(href="/bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet")
+		link(href="/bower_components/bootstrap-material-design/dist/css/material-wfont.min.css" rel="stylesheet")
+		script(src="/bower_components/bootstrap-material-design/dist/js/ripples.min.js")
+		script(src="/bower_components/bootstrap-material-design/dist/js/material.min.js")
+		// google maps
+		script(src='//maps.googleapis.com/maps/api/js?sensor=false')
+		script(src="/bower_components/angular-google-maps/dist/angular-google-maps.min.js")
+		// various libraries
+		script(src="/bower_components/lodash/dist/lodash.min.js")
+		script(src="/bower_components/moment/moment.js")
+		// loading bar
+		link(href='/bower_components/angular-loading-bar/build/loading-bar.min.css' rel='stylesheet')
+		script(src="/bower_components/angular-loading-bar/build/loading-bar.min.js")
+		// angular busy
+		link(href='/bower_components/angular-busy/dist/angular-busy.min.css' rel='stylesheet')
+		script(src="/bower_components/angular-busy/dist/angular-busy.min.js")
+		// growl
+		link(href='/bower_components/angular-growl-v2/build/angular-growl.min.css' rel='stylesheet')
+		script(src="/bower_components/angular-growl-v2/build/angular-growl.min.js")
+		// tags
+		link(href='/bower_components/ng-tags-input/ng-tags-input.min.css' rel='stylesheet')
+		link(href='/bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css' rel='stylesheet')
+		script(src="/bower_components/ng-tags-input/ng-tags-input.min.js")
+		// selection model
+		script(src="/bower_components/angular-selection-model/dist/selection-model.min.js")
+		// app
+		script(src='/javascripts/app.js')
+		script(src='/javascripts/controllers.js')
+		script(src='/javascripts/services.js')
+		// controllers
+		script(src='/javascripts/controllers/CasoItemCtrl.js')
+		script(src='/javascripts/controllers/CasoListCtrl.js')
+		script(src='/javascripts/controllers/CasoNewCtrl.js')
+		link(href='/stylesheets/style.css' rel='stylesheet')
+	body(ng-controller="CasoListCtrl")
+		.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='javascript:void(0)') Issue management
+			.navbar-collapse.collapse.navbar-responsive-collapse
+				ul.nav.navbar-nav.navbar-left
+					li(ng-class="{ active: isActive('/caso') }")
+						a(href='/#/caso') Issues					
+		div.container-fluid
+			div(growl='')
+			div(ng-view)

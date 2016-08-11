@@ -1,0 +1,52 @@
+.row
+  .col-xs-5
+    h1 Issues
+.row
+  .col-xs-5(style="margin-bottom: 5px")    
+  .col-xs-7
+    form(role='form', ng-submit='filter()')
+      input.form-control(type='text', ng-model='query', placeholder='Find issue', ng-change='submit()')
+.row
+  .col-xs-12
+    ul(cg-busy="casos.$promise")
+      table#caso.table.table-striped.table-bordered.table-condensed
+        thead
+          tr
+            th
+            th Identifier
+            th Date
+            th Type
+            th Description
+            th User            
+            th
+        tbody
+          tr(ng-show='casos.length==0 && loading', ng-repeat='n in [] | range:15')
+            td(style="width:10px")
+              input(type='checkbox')
+            td(ng-repeat='n in [] | range:6')
+            td 
+              a.btn.btn-info.btn-xs(href='#', title='Edit', style="margin: 0; padding: 4px 30px;")
+                span.glyphicon.glyphicon-edit
+                | Edit
+          tr(ng-show='casos.length>0',ng-repeat='caso in casos', selection-model='', selection-model-type="checkbox", selection-model-selected-class='highlight', selection-model-mode="multiple-additive", selection-model-selected-items="casosSeleccionados")
+            td(style="width:10px")
+              input(type='checkbox')
+            td 
+              span.flag(ng-class="getClass(caso)") {{caso.id}}
+            td {{caso.fecha | date:'dd/MM/yyyy'}}
+            td {{caso.tipo}}
+            td {{caso.descripcion}}
+            td {{caso.usuario}}            
+            td            
+              a.btn.btn-info.btn-xs(href='#/caso/{{caso._id}}', title='Edit', style="margin: 0; padding: 4px 30px;")
+                span.glyphicon.glyphicon-edit
+                | Edit
+      a.btn.btn-fab.btn-danger.btn-raised.mdi-content-add.pull-right(style="margin-top: -60px; margin-right: -22px;", type="button", href="#/nuevoCaso")    
+    nav.text-center
+      ul.pagination(ng-show="pages>1 && !loading")
+        li: a(ng-show='page>1',href="#/caso?page=1&query={{query}}&codigosEtiqueta={{codigosEtiqueta}}") First
+        li: a(ng-show='page>1', href="#/caso?page={{previous()}}&query={{query}}&codigosEtiqueta={{codigosEtiqueta}}") Previous
+        li(ng-repeat="n in [page,pages] | pageRange" ng-class="{active: {{page}} == {{n}}}"): a(href="#/caso?page={{n}}&query={{query}}&codigosEtiqueta={{codigosEtiqueta}}") {{n}}
+        li: a(ng-show='page<pages',href="#/caso?page={{next()}}&query={{query}}&codigosEtiqueta={{codigosEtiqueta}}") Next
+        li: a(ng-show='page<pages',href="#/caso?page={{pages}}&query={{query}}&codigosEtiqueta={{codigosEtiqueta}}") Last      
+p  

@@ -1,0 +1,47 @@
+form.form-horizontal(role='form', ng-submit="createCaso()")
+  .row
+      .col-xs-7
+          h1 New Case
+      .col-xs-5
+  .container-fluid
+    .row      
+      .panel.panel-default
+        .panel-heading File details
+        .panel-body
+          .form-group
+            .col-sm-3
+              label.control-label(for='casoId') Identifier
+              .form-control-wrapper
+                  input#casoId.form-control(type='text', placeholder='Id', value='{{caso.id}}', disabled='true', size="8")
+                  span.material-input
+            .col-sm-5
+              label.control-label(for='casoUsuario') Usuario
+              .form-control-wrapper
+                input#casoUsuario.form-control(type='text', placeholder='User', ng-model='caso.usuario')
+                span.material-input
+            .col-sm-4
+              label.control-label(for='casoFecha') Date
+              .form-control-wrapper
+                input#casoFecha.form-control(type='text', ui-mask='99/99/9999' model-view-value='true', placeholder='dd/mm/yyyy', bs-datefield='DD/MM/YYYY', ng-model='caso.fecha', disabled='true')
+                span.material-input
+          .form-group
+            .col-sm-4
+              label.control-label(for='casoTipo') Type
+              .form-control-wrapper
+                input#casoTipo.form-control(type='text', placeholder='Type', ng-model='caso.tipo')
+                span.material-input
+            .col-sm-8
+              label.control-label(for='casoDescripcion') Description
+              .form-control-wrapper
+                input#casoDescripcion.form-control(type='text', placeholder='Description', ng-model='caso.descripcion')
+                span.material-input                
+    p
+      hr
+    .row
+      .col-xs-6
+        a.btn.btn-default(href='#/caso', role='button')
+          span.glyphicon.glyphicon-arrow-left
+          |&nbsp;Back to Case List
+      .col-xs-6
+        button.btn.btn-primary.pull-right(type='submit') Create Case »
+    p  
